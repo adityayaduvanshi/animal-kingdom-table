@@ -1,0 +1,267 @@
+body {
+    background-color: #f8f9fb;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.container-fluid {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-title {
+    color: #0f172a;
+    font-size: 1.875rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+
+.animal-section {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.section-header {
+    background: #0f172a;
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px 8px 0 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sort-info {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.75rem;
+}
+
+.add-button {
+    background-color: white;
+    color: #0f172a;
+    border: none;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.add-button:hover {
+    background: #f8f9fb;
+    transform: translateY(-1px);
+}
+
+.add-button i {
+    font-size: 0.75rem;
+}
+
+.add-button:hover {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+
+.table-wrapper {
+    padding: 0;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.table th {
+    background: #f1f5f9;
+    color: #64748b;
+    font-weight: 500;
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #e2e8f0;
+    color: #334155;
+}
+
+/* Image Styles */
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.animal-image {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.animal-image:hover {
+    transform: scale(3);
+    border-color: #0f172a;
+    z-index: 100;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+
+.blue-bold-italic {
+    color: #2563eb;
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+.image-container::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.image-container:hover::after {
+    opacity: 1;
+}
+
+
+.btn-action {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    border: none;
+    margin: 0 0.25rem;
+    transition: opacity 0.2s;
+}
+
+.btn-edit {
+    background: #f59e0b;
+    color: white;
+}
+
+.btn-delete {
+    background: #ef4444;
+    color: white;
+}
+
+.btn-edit:hover, .btn-delete:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+
+.sort-icon {
+    font-size: 0.75rem;
+    margin-left: 0.25rem;
+    color: #64748b;
+}
+
+
+.modal-content {
+    border-radius: 8px;
+    border: none;
+}
+
+.modal-header {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.modal-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #0f172a;
+}
+
+.modal-body {
+    padding: 1rem;
+}
+
+.form-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #64748b;
+    margin-bottom: 0.375rem;
+}
+
+.form-control {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+}
+
+.form-control:focus {
+    border-color: #0f172a;
+    box-shadow: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .sort-info {
+        margin-left: 1.5rem;
+    }
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: #f8f9fb;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.table-columns {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr 1fr auto;
+    gap: 2rem;
+    padding: 0.75rem 1.25rem;
+    background: #f8f9fb;
+    border-bottom: 1px solid #e2e8f0;
+    color: #64748b;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
